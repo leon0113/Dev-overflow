@@ -1,10 +1,9 @@
-import { SignIn, SignedIn } from '@clerk/nextjs'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { UserButton } from "@clerk/nextjs";
-import Theme from './Theme'
+import { SignedIn, UserButton } from '@clerk/nextjs';
+import Image from 'next/image';
+import Link from 'next/link';
+import GlobalSearch from '../search/GlobalSearch';
 import MobileNav from './MobileNav';
+import Theme from './Theme';
 
 const Navbar = () => {
     return (
@@ -20,7 +19,7 @@ const Navbar = () => {
                 />
                 <p className='h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden'>Dev <span className='text-primary-500'>Overflow</span></p>
             </Link>
-            <p className=''>search</p>
+            <GlobalSearch />
 
             <div className='flex-between gap-5'>
                 <Theme />
