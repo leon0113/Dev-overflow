@@ -1,9 +1,54 @@
+import QuestionCard from "@/components/cards/QuestionCard";
+import HomeFilters from "@/components/home/HomeFilters";
 import Filter from "@/components/shared/Filter";
+import NoResult from "@/components/shared/NoResult";
 import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constant/filters";
 import Link from "next/link";
 
+const questions = [
+    {
+        _id: 1,
+        title: "This is a dummy question title",
+        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
+        author: "leon",
+        upvotes: 10,
+        views: 100,
+        answers: 2,
+        createdAt: '2024-09-01T12:00:00.000Z'
+    },
+    {
+        _id: 2,
+        title: "This is a dummy question title",
+        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
+        author: "leon",
+        upvotes: 10,
+        views: 100,
+        answers: 2,
+        createdAt: '2024-09-01T12:00:00.000Z'
+    },
+    {
+        _id: 3,
+        title: "This is a dummy question title",
+        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
+        author: "leon",
+        upvotes: 10,
+        views: 100,
+        answers: 2,
+        createdAt: '2024-09-01T12:00:00.000Z'
+    },
+    {
+        _id: 4,
+        title: "This is a dummy question title",
+        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
+        author: "leon",
+        upvotes: 10,
+        views: 100,
+        answers: 2,
+        createdAt: '2024-09-01T12:00:00.000Z'
+    }
+]
 
 export default function Home() {
     return (
@@ -28,6 +73,21 @@ export default function Home() {
                 />
 
                 <Filter filters={HomePageFilters} otherClasses={"min-h-[56px] sm:min-w-[170px]"} containerClasses={"hidden max-md:flex"} />
+            </div>
+
+            <HomeFilters />
+            <div className="mt-10 flex w-full flex-col gap-6">
+                {
+                    questions.length > 0 ?
+                        questions.map((question) => (
+                            <QuestionCard key={question._id} {...question} />
+                        )) :
+                        <NoResult
+                            name={"questions"}
+                            link={"/ask-question"}
+                            linkTitle={"Ask a question"}
+                        />
+                }
             </div>
         </>
     )
