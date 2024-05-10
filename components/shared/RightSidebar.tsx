@@ -6,50 +6,50 @@ import RenderTags from './RenderTags'
 const RightSidebar = () => {
     const hotQuestions = [
         {
-            _id: 1,
+            _id: "1",
             title: "jgosdjgosdjgfosedgedg"
         },
         {
-            _id: 2,
+            _id: "2",
             title: "jgosdjgosdjgfosedgedg"
         },
         {
-            _id: 3,
+            _id: "3",
             title: "jgosdjgosdjgfosedgedg"
         },
         {
-            _id: 4,
+            _id: "4",
             title: "jgosdjgosdjgfosedgedg"
         },
         {
-            _id: 5,
+            _id: "5",
             title: "jgosdjgosdjgfosedgedg"
         },
     ];
 
     const popularTags = [
         {
-            _id: 1,
+            _id: "1",
             name: "javascript",
             totalQuestions: 4
         },
         {
-            _id: 2,
+            _id: "2",
             name: "javascript",
             totalQuestions: 4
         },
         {
-            _id: 3,
+            _id: "3",
             name: "javascript",
             totalQuestions: 4
         },
         {
-            _id: 4,
+            _id: "4",
             name: "javascript",
             totalQuestions: 4
         },
         {
-            _id: 5,
+            _id: "5",
             name: "javascript",
             totalQuestions: 4
         },

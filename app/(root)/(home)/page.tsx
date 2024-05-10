@@ -11,43 +11,23 @@ const questions = [
     {
         _id: 1,
         title: "This is a dummy question title",
-        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
-        author: "leon",
-        upvotes: 10,
-        views: 100,
-        answers: 2,
-        createdAt: '2024-09-01T12:00:00.000Z'
+        tags: [{ _id: "1", name: "python" }, { _id: "2", name: "Php" }, { _id: "3", name: "javascript" },],
+        author: { _id: 1, name: "Leon", picture: "leon.jpg" },
+        upvotes: 99900,
+        views: 150000000,
+        answers: [],
+        createdAt: new Date('2021-09-01T12:00:00.000Z')
     },
     {
-        _id: 2,
+        _id: 1,
         title: "This is a dummy question title",
-        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
-        author: "leon",
+        tags: [{ _id: "1", name: "python" }, { _id: "2", name: "Php" }, { _id: "3", name: "javascript" },],
+        author: { _id: 1, name: "Leon", picture: "leon.jpg" },
         upvotes: 10,
         views: 100,
-        answers: 2,
-        createdAt: '2024-09-01T12:00:00.000Z'
+        answers: [],
+        createdAt: new Date('2023-09-01T12:00:00.000Z')
     },
-    {
-        _id: 3,
-        title: "This is a dummy question title",
-        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
-        author: "leon",
-        upvotes: 10,
-        views: 100,
-        answers: 2,
-        createdAt: '2024-09-01T12:00:00.000Z'
-    },
-    {
-        _id: 4,
-        title: "This is a dummy question title",
-        tags: [{ _id: 1, name: "python" }, { _id: 2, name: "Php" }, { _id: 3, name: "javascript" },],
-        author: "leon",
-        upvotes: 10,
-        views: 100,
-        answers: 2,
-        createdAt: '2024-09-01T12:00:00.000Z'
-    }
 ]
 
 export default function Home() {
