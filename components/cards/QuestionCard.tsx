@@ -17,8 +17,9 @@ interface QuestionCardProps {
 
 const QuestionCard = ({ _id, title, tags, author, upvotes, views, answers, createdAt }: QuestionCardProps) => {
     return (
+        // total 3 parts 
         <div className='card-wrapper p-9 sm:px-11 rounded-[10px]'>
-
+            {/* title part  */}
             <div className='flex flex-col-reverse items-start justify-between gap-5 sm:flex-row'>
                 <div>
                     <span className='subtle-regular text-dark400_light700 line-clamp-1 flex sm:hidden'>
@@ -32,12 +33,13 @@ const QuestionCard = ({ _id, title, tags, author, upvotes, views, answers, creat
                 </div>
                 {/*TODO: If signed in add edit delete actions  */}
             </div>
+            {/* tags part */}
             <div className='mt-3.5 flex flex-wrap gap-2'>
                 {tags.map((tag) => (
                     <RenderTags key={tag._id} _id={tag._id} name={tag.name} />
                 ))}
             </div>
-
+            {/* matrics part  */}
             <div className='flex-between mt-6 w-full flex-wrap gap-3'>
                 <Metric
                     imgUrl='/assets/icons/avatar.svg'

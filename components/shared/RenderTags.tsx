@@ -3,14 +3,14 @@ import React from 'react'
 import { Badge } from "@/components/ui/badge"
 
 
-interface Props {
+interface RenderTagsProps {
     _id: string,
     name: string,
     totalQuestions?: number
     showCount?: boolean
 }
 
-const RenderTags = ({ _id, name, totalQuestions, showCount }: Props) => {
+const RenderTags = ({ _id, name, totalQuestions, showCount }: RenderTagsProps) => {
     return (
         <Link
             href={`/tags/${_id}`}

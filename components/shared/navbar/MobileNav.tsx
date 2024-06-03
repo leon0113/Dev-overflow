@@ -37,7 +37,7 @@ const MobileNav = () => {
                         height={23}
                         alt='DevOverflow'
                     />
-                    <p className='h2-bold font-spaceGrotesk text-dark-100_light900 '>Dev <span className='text-primary-500'>Overflow</span></p>
+                    <p className='h2-bold font-spaceGrotesk text-dark-100_light900  dark:text-white'>Dev <span className='text-primary-500'>Overflow</span></p>
                 </Link>
                 <div>
                     <SheetClose asChild>

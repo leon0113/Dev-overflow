@@ -7,7 +7,7 @@ const RightSidebar = () => {
     const hotQuestions = [
         {
             _id: "1",
-            title: "jgosdjgosdjgfosedgedg"
+            title: "What is the future of Web3?"
         },
         {
             _id: "2",
@@ -36,7 +36,7 @@ const RightSidebar = () => {
         {
             _id: "2",
             name: "javascript",
-            totalQuestions: 4
+            totalQuestions: 34
         },
         {
             _id: "3",
@@ -46,12 +46,12 @@ const RightSidebar = () => {
         {
             _id: "4",
             name: "javascript",
-            totalQuestions: 4
+            totalQuestions: 6
         },
         {
             _id: "5",
             name: "javascript",
-            totalQuestions: 4
+            totalQuestions: 10
         },
     ]
 
@@ -90,7 +90,7 @@ const RightSidebar = () => {
                             _id={tag._id}
                             name={tag.name}
                             totalQuestions={tag.totalQuestions}
-                            showCount
+                            showCount={true}
                         />
                     ))
                 }

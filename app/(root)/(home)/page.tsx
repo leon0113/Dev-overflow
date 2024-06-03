@@ -16,10 +16,10 @@ const questions = [
         upvotes: 99900,
         views: 150000000,
         answers: [],
-        createdAt: new Date('2021-09-01T12:00:00.000Z')
+        createdAt: new Date('2024-05-14T19:04:00.000Z')
     },
     {
-        _id: 1,
+        _id: 2,
         title: "This is a dummy question title",
         tags: [{ _id: "1", name: "python" }, { _id: "2", name: "Php" }, { _id: "3", name: "javascript" },],
         author: { _id: 1, name: "Leon", picture: "leon.jpg" },
@@ -36,7 +36,7 @@ export default function Home() {
             <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
                 <h1 className="h1-bold text-dark100_light900">All Questions</h1>
 
-                <Link href="/ask-question" className="flex justify-end max-sm:w-full">
+                <Link href="/ask-question" className="flex justify-center md:justify-end max-sm:w-full">
                     <Button className="primary-gradient min-h-[46px] px-4 py-3 !text-light-900">
                         Ask a Question
                     </Button>
