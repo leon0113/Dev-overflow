@@ -20,12 +20,10 @@ const TagSchema = new Schema({
     questions: [{
         type: Schema.Types.ObjectId,
         ref: "Question",
-        // required: true,
     }],
     followers: [{
         type: Schema.Types.ObjectId,
         ref: "User",
-        // required: true,
     }],
     createdOn: {
         type: Date,
