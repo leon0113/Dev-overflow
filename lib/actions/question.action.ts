@@ -3,8 +3,11 @@
 import Question from "@/database/question.model";
 import { connectToDatabase } from "../mongoose"
 import Tag from "@/database/tag.model";
+import { CreateQuestionParams, GetQuestionParams } from "./shared.types";
+import User from "@/database/user.model";
+import { revalidatePath } from "next/cache";
 
-export async function createQuestion(params: any) {
+export async function createQuestion(params: CreateQuestionParams) {
     try {
         //calling the db
         connectToDatabase();
@@ -19,6 +22,7 @@ export async function createQuestion(params: any) {
         // initial empty array of tags
         const tagDocuments = [];
         // extrat every single tag from tags param. then checking if thet tag already exists in the db or not. if not then create a new tag in db
+        // @ts-ignore
         for (const tag of tags) {
             const existingTag = await Tag.findOneAndUpdate({
                 name: { $regex: new RegExp(`^${tag}$`, "i") }
@@ -41,7 +45,23 @@ export async function createQuestion(params: any) {
 
         // Increment author's reputation by +5 for creating a question
 
+
+        revalidatePath(path);
     } catch (error) {
         console.log(error);
+    }
+}
+
+
+export async function getQuestions(params: GetQuestionParams) {
+    try {
+        connectToDatabase();
+
+        const questions = await Question.find({}).populate({ path: 'tags', model: Tag }).populate({ path: 'author', model: User }).sort({ createdAt: -1 });
+
+        return { questions };
+    } catch (error) {
+        console.log(error);
+        throw error;
     }
 }

@@ -5,32 +5,37 @@ import NoResult from "@/components/shared/NoResult";
 import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constant/filters";
+import { getQuestions } from "@/lib/actions/question.action";
 import Link from "next/link";
 
-const questions = [
-    {
-        _id: 1,
-        title: "This is a dummy question title",
-        tags: [{ _id: "1", name: "python" }, { _id: "2", name: "Php" }, { _id: "3", name: "javascript" },],
-        author: { _id: 1, name: "Leon", picture: "leon.jpg" },
-        upvotes: 99900,
-        views: 150000000,
-        answers: [],
-        createdAt: new Date('2024-05-14T19:04:00.000Z')
-    },
-    {
-        _id: 2,
-        title: "This is a dummy question title",
-        tags: [{ _id: "1", name: "python" }, { _id: "2", name: "Php" }, { _id: "3", name: "javascript" },],
-        author: { _id: 1, name: "Leon", picture: "leon.jpg" },
-        upvotes: 10,
-        views: 100,
-        answers: [],
-        createdAt: new Date('2023-09-01T12:00:00.000Z')
-    },
-]
+// const questions = [
+//     {
+//         _id: 1,
+//         title: "This is a dummy question title",
+//         tags: [{ _id: "1", name: "python" }, { _id: "2", name: "Php" }, { _id: "3", name: "javascript" },],
+//         author: { _id: 1, name: "Leon", picture: "leon.jpg" },
+//         upvotes: 99900,
+//         views: 150000000,
+//         answers: [],
+//         createdAt: new Date('2024-06-06T10:37:14.276+00:00')
+//     },
+//     {
+//         _id: 2,
+//         title: "This is a dummy question title 2",
+//         tags: [{ _id: "1", name: "python" }, { _id: "2", name: "Php" }, { _id: "3", name: "javascript" },],
+//         author: { _id: 1, name: "Leon", picture: "leon.jpg" },
+//         upvotes: 10,
+//         views: 100,
+//         answers: [],
+//         createdAt: new Date('2024-06-06T10:37:14.276+00:00')
+//     },
+// ]
 
-export default function Home() {
+export default async function Home() {
+
+    const result = await getQuestions({});
+    // console.log(result.questions);
+
     return (
         <>
             <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -58,9 +63,18 @@ export default function Home() {
             <HomeFilters />
             <div className="mt-10 flex w-full flex-col gap-6">
                 {
-                    questions.length > 0 ?
-                        questions.map((question) => (
-                            <QuestionCard key={question._id} {...question} />
+                    result.questions.length > 0 ?
+                        result.questions.map((question) => (
+                            <QuestionCard key={question._id}
+                                _id={question._id}
+                                title={question.title}
+                                tags={question.tags}
+                                author={question.author}
+                                upvotes={question.upvotes}
+                                answers={question.answers}
+                                createdAt={question.createdAt}
+                                views={question.views}
+                            />
                         )) :
                         <NoResult
                             name={"questions"}

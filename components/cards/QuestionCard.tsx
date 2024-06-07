@@ -16,6 +16,7 @@ interface QuestionCardProps {
 }
 
 const QuestionCard = ({ _id, title, tags, author, upvotes, views, answers, createdAt }: QuestionCardProps) => {
+
     return (
         // total 3 parts 
         <div className='card-wrapper p-9 sm:px-11 rounded-[10px]'>

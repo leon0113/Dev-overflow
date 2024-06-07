@@ -51,7 +51,8 @@ const Question = ({ mongoUserId }: { mongoUserId: string }) => {
                 title: values.title,
                 content: values.explaination,
                 tags: values.tags,
-                author: JSON.parse(mongoUserId)
+                author: JSON.parse(mongoUserId),
+                path: pathName
             })
             //navigate to home page
             router.push('/');
@@ -79,7 +80,7 @@ const Question = ({ mongoUserId }: { mongoUserId: string }) => {
                     })
                 }
 
-                if (!field.value.includes(tagValue as never)) { // checking current tag doesn't exists within the tags already 
+                if (!field.value.includes(tagValue as never)) { // checking current tag doesn't exists within the tags already or not
                     form.setValue('tags', [...field.value, tagValue]);
                     tagInput.value = '';
                     form.clearErrors('tags');
