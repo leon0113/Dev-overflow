@@ -4,7 +4,7 @@ import { Schema, models, model, Document } from "mongoose";
 export interface IUser extends Document {
     clerkId: string;
     name: string;
-    userName: string;
+    username: string;
     email: string;
     password?: string;
     bio?: string;
@@ -26,7 +26,7 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    userName: {
+    username: {
         type: String,
         required: true,
         unique: true
