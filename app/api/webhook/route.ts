@@ -95,7 +95,7 @@ export async function POST(req: Request) {
 
         //update user in our mongodb 
         const deletedUser = await deleteUser({
-            clerkId: id
+            clerkId: id!
         });
 
         return NextResponse.json({ message: "User deleted successfully", user: deletedUser })
